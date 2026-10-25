@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111827">
+<title>پرچی ممبر ڈیش بورڈ</title>
+<style>
+:root{--bg:#f3f6fb;--card:#fff;--ink:#172033;--muted:#697386;--line:#e5eaf2;--navy:#111827;--blue:#4263eb;--teal:#0f9d8a;--gold:#f4b740;--red:#e45757}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#edf2ff 0%,#f7f9fc 45%,#eefaf7 100%);font-family:system-ui,-apple-system,"Noto Nastaliq Urdu","Noto Sans Arabic",Arial,sans-serif;color:var(--ink)}
+.wrap{max-width:1120px;margin:auto;padding:18px}.hero{background:linear-gradient(125deg,#111827,#273b70 65%,#167e79);color:white;border-radius:24px;padding:22px;box-shadow:0 14px 35px #14244a25}
+.top{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.eyebrow{font-size:12px;opacity:.75}.hero h1{margin:5px 0;font-size:clamp(25px,4vw,36px)}.hero p{margin:4px 0;color:#e0e7ff}.pill{background:#ffffff1c;border:1px solid #ffffff30;border-radius:999px;padding:8px 12px;font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0}.stat,.panel,.member{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 5px 18px #1e293b08}.stat{padding:16px}.stat .label{font-size:13px;color:var(--muted)}.stat strong{display:block;font-size:26px;margin-top:5px;direction:ltr;text-align:right}
+.layout{display:grid;grid-template-columns: minmax(0,1fr) minmax(0,1.2fr);gap:14px}.panel{padding:18px}.panel h2{font-size:19px;margin:0 0 13px}.hint{font-size:12px;color:var(--muted);line-height:1.7}
+label{display:block;font-size:13px;color:#4b5563;margin:10px 0 6px}input,select{width:100%;padding:12px;border:1px solid #d7deea;border-radius:12px;background:#fff;font:inherit;color:var(--ink);outline:none}input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #4263eb18}
+.row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end}.btn{border:0;border-radius:12px;padding:12px 15px;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap}.primary{background:var(--blue);color:white}.dark{background:var(--navy);color:white}.soft{background:#eef2ff;color:#3446a8}.danger{background:#fff0f0;color:#b42323}.btn:active{transform:scale(.98)}
+.entries{display:grid;gap:10px}.member{padding:14px}.memberhead{display:flex;align-items:center;justify-content:space-between;gap:8px}.mname{font-size:17px;font-weight:800;overflow-wrap:anywhere}.rank{background:#eef2ff;color:#3f51b5;border-radius:10px;padding:5px 9px;font-weight:800;font-size:12px;white-space:nowrap}.mstats{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.mini{background:#f5f7fb;border-radius:10px;padding:7px 10px;font-size:12px;color:#525f75}.mini b{color:#172033;font-size:14px;margin-right:4px}.addrow{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:7px;align-items:end}.addrow input{min-width:0}.numberlist{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.chip{background:#eaf8f5;color:#087f70;border:1px solid #c9eee7;border-radius:9px;padding:5px 8px;font-size:12px;direction:ltr}.chip.zero{background:#fff4dc;color:#8a5b00;border-color:#ffe4a3}.empty{border:1px dashed #cbd5e1;border-radius:14px;padding:24px;text-align:center;color:var(--muted);line-height:1.8}
+.ranklist{display:grid;gap:8px}.rankitem{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center;padding:11px;border:1px solid var(--line);border-radius:13px;background:#fff}.medal{width:34px;height:34px;border-radius:11px;background:#eef2ff;display:grid;place-items:center;font-weight:900;color:#3949ab}.rankitem:nth-child(1) .medal{background:#fff0c2;color:#8a5b00}.rankitem:nth-child(2) .medal{background:#edf0f5;color:#4b5563}.rankitem:nth-child(3) .medal{background:#ffe8d8;color:#9a4b16}.rname{font-weight:750}.rmeta{font-size:12px;color:var(--muted)}.rvalue{font-weight:850;direction:ltr}
+.sectiontitle{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}.sectiontitle h2{margin:0}.smallbtn{padding:8px 10px;font-size:12px}.footer{font-size:12px;color:var(--muted);text-align:center;padding:20px 5px;line-height:1.8}
+.notice{background:#fff8e7;color:#7a5200;border:1px solid #f4dfaa;padding:11px 13px;border-radius:12px;font-size:12px;line-height:1.7;margin-top:12px}
+@media(max-width:760px){.wrap{padding:12px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.stat{padding:13px}.stat strong{font-size:22px}.layout{grid-template-columns:1fr}.hero{padding:18px}.panel{padding:14px}.addrow{grid-template-columns:1fr 1fr}.addrow input{grid-column:1/-1}.addrow button{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+ <div class="top"><div><div class="eyebrow">MEMBER SCOREBOARD</div><h1>🏆 پرچی ممبر ڈیش بورڈ</h1><p>ممبرز کے نمبر، خودکار ٹوٹل، پوزیشن اور زیرو ریکارڈ</p></div><span class="pill" id="saveState">● اس ڈیوائس پر آٹو سیو</span></div>
+</header>
+<section class="stats">
+ <div class="stat"><div class="label">کل ممبرز</div><strong id="memberCount">0</strong></div>
+ <div class="stat"><div class="label">تمام ممبرز کے مجموعی نمبر</div><strong id="grandTotal">0</strong></div>
+ <div class="stat"><div class="label">کل زیرو (انڈے)</div><strong id="grandZeros">0</strong></div>
+ <div class="stat"><div class="label">سب سے زیادہ نمبر</div><strong id="topScore">0</strong></div>
+</section>
+<div class="layout">
+ <section class="panel">
+  <h2>➕ نیا ممبر شامل کریں</h2>
+  <form id="memberForm">
+   <label for="memberName">ممبر کا نام</label>
+   <input id="memberName" placeholder="یہاں ممبر کا نام لکھیں" maxlength="80" required>
+   <div style="margin-top:10px"><button class="btn primary" type="submit" style="width:100%">ممبر شامل کریں</button></div>
+  </form>
+  <div class="notice">ہر ممبر کے نیچے اس کے نمبر درج کریں۔ صفر (0) درج کرنے پر زیرو کی تعداد خود بخود بڑھے گی۔ رینکنگ بھی خود تبدیل ہوگی۔</div>
+  <div style="height:18px"></div>
+  <div class="sectiontitle"><h2>🥇 نمبر وائز پوزیشن</h2></div>
+  <div class="ranklist" id="scoreRanking"></div>
+  <div style="height:18px"></div>
+  <div class="sectiontitle"><h2>⭕ زیرو وائز پوزیشن</h2></div>
+  <div class="ranklist" id="zeroRanking"></div>
+ </section>
+ <section class="panel">
+  <div class="sectiontitle"><h2>👥 ممبر ریکارڈ</h2><button class="btn soft smallbtn" id="exportBtn" type="button">ریکارڈ ڈاؤن لوڈ</button></div>
+  <div id="memberList" class="entries"></div>
+  <div class="footer">ریکارڈ اسی براؤزر/ڈیوائس میں خودکار محفوظ ہوتا ہے۔ دوسرے موبائلوں پر ایک ہی مشترکہ ریکارڈ کے لیے آن لائن ڈیٹابیس اور ہوسٹنگ کی سیٹنگ بھی مکمل کرنا ہوگی۔</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+   <button class="btn soft" id="importBtn" type="button">ریکارڈ بحال کریں</button>
+   <button class="btn danger" id="clearBtn" type="button">تمام ریکارڈ صاف کریں</button>
+   <input id="importFile" type="file" accept="application/json,.json" hidden>
+  </div>
+ </section>
+</div>
+<div class="footer">پرچی اسکور بورڈ • خودکار حساب • ممبر وائز ریکارڈ</div>
+</div>
+<script>
+const KEY='parchi_dashboard_v2';
+let members=[];
+try{members=JSON.parse(localStorage.getItem(KEY)||'[]');if(!Array.isArray(members))members=[];}catch(e){members=[]}
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem(KEY,JSON.stringify(members));$('saveState').textContent='● محفوظ ہوگیا';setTimeout(()=>$('saveState').textContent='● اس ڈیوائس پر آٹو سیو',1200)}
+function total(m){return m.numbers.reduce((a,b)=>a+b,0)}
+function zeros(m){return m.numbers.filter(n=>n===0).length}
+function fmt(n){return Number(n||0).toLocaleString('en-US')}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function rankHTML(list,kind){if(!list.length)return '<div class="empty">ابھی ممبر شامل نہیں کیا گیا۔</div>';return list.map((m,i)=>`<div class="rankitem"><div class="medal">${i+1}</div><div><div class="rname">${esc(m.name)}</div><div class="rmeta">${kind==='score'?'مجموعی نمبر':'زیرو کی تعداد'}</div></div><div class="rvalue">${fmt(kind==='score'?total(m):zeros(m))}</div></div>`).join('')}
+function render(){
+ $('memberCount').textContent=fmt(members.length);
+ $('grandTotal').textContent=fmt(members.reduce((s,m)=>s+total(m),0));
+ $('grandZeros').textContent=fmt(members.reduce((s,m)=>s+zeros(m),0));
+ $('topScore').textContent=fmt(members.length?Math.max(...members.map(total)):0);
+ $('scoreRanking').innerHTML=rankHTML([...members].sort((a,b)=>total(b)-total(a)||a.name.localeCompare(b.name)), 'score');
+ $('zeroRanking').innerHTML=rankHTML([...members].sort((a,b)=>zeros(b)-zeros(a)||a.name.localeCompare(b.name)), 'zero');
+ const list=$('memberList');
+ if(!members.length){list.innerHTML='<div class="empty">ابھی کوئی ممبر نہیں۔ اوپر نام لکھ کر <b>ممبر شامل کریں</b> دبائیں۔</div>';return}
+ list.innerHTML=members.map(m=>`<article class="member">
+  <div class="memberhead"><div class="mname">${esc(m.name)}</div><span class="rank">پوزیشن ${[...members].sort((a,b)=>total(b)-total(a)).findIndex(x=>x.id===m.id)+1}</span></div>
+  <div class="mstats"><span class="mini">کل نمبر <b>${fmt(total(m))}</b></span><span class="mini">زیرو <b>${fmt(zeros(m))}</b></span><span class="mini">اندراجات <b>${fmt(m.numbers.length)}</b></span></div>
+  <form class="addrow" data-id="${m.id}"><div><label>نمبر درج کریں (زیرو بھی)</label><input name="score" type="number" step="1" inputmode="numeric" placeholder="مثلاً 25 یا 0" required></div><button class="btn primary" type="submit">نمبر شامل</button><button class="btn danger delete" type="button" data-delete="${m.id}">ممبر حذف</button></form>
+  <div class="numberlist">${m.numbers.length?m.numbers.map((n,i)=>`<span class="chip ${n===0?'zero':''}" title="اندراج ${i+1}">${fmt(n)} <button type="button" data-remove="${m.id}:${i}" aria-label="اندراج حذف کریں" style="border:0;background:transparent;color:inherit;padding:0 0 0 4px;font-weight:bold">×</button></span>`).join(''):'<span class="hint">ابھی نمبر درج نہیں ہوئے۔</span>'}</div>
+ </article>`).join('');
+}
+$('memberForm').addEventListener('submit',e=>{e.preventDefault();const name=$('memberName').value.trim();if(!name)return;if(members.some(m=>m.name.toLocaleLowerCase()===name.toLocaleLowerCase())){alert('یہ نام پہلے سے موجود ہے۔');return}members.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,7),name,numbers:[]});$('memberName').value='';save();render()});
+$('memberList').addEventListener('submit',e=>{if(!e.target.matches('.addrow'))return;e.preventDefault();const m=members.find(x=>x.id===e.target.dataset.id);const raw=e.target.elements.score.value;if(!m||raw==='')return;const n=Number(raw);if(!Number.isFinite(n)||!Number.isInteger(n)){alert('براہِ کرم پورا نمبر درج کریں۔');return}m.numbers.push(n);save();render()});
+$('memberList').addEventListener('click',e=>{const del=e.target.closest('[data-delete]');if(del){const m=members.find(x=>x.id===del.dataset.delete);if(m&&confirm(`کیا "${m.name}" اور اس کا پورا ریکارڈ حذف کرنا ہے؟`)){members=members.filter(x=>x.id!==m.id);save();render()}return}const rem=e.target.closest('[data-remove]');if(rem){const [id,idx]=rem.dataset.remove.split(':');const m=members.find(x=>x.id===id);if(m&&confirm('یہ نمبر حذف کریں؟')){m.numbers.splice(Number(idx),1);save();render()}}});
+$('clearBtn').addEventListener('click',()=>{if(confirm('کیا تمام ممبرز اور نمبر ہمیشہ کے لیے اس ڈیوائس کے ریکارڈ سے صاف کرنے ہیں؟ پہلے ریکارڈ ڈاؤن لوڈ کر لیں۔')){members=[];save();render()}});
+$('exportBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),members},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='parchi-record-backup.json';a.click();URL.revokeObjectURL(a.href)});
+$('importBtn').addEventListener('click',()=>$('importFile').click());
+$('importFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const data=JSON.parse(await f.text());const arr=Array.isArray(data)?data:data.members;if(!Array.isArray(arr))throw Error();if(confirm('موجودہ ریکارڈ کی جگہ فائل والا ریکارڈ بحال کریں؟')){members=arr.filter(m=>m&&typeof m.name==='string'&&Array.isArray(m.numbers)).map(m=>({id:String(m.id||Date.now()+Math.random()),name:m.name,numbers:m.numbers.map(Number).filter(Number.isFinite)}));save();render()}}catch(err){alert('یہ بیک اپ فائل درست نہیں۔')}e.target.value=''});
+render();
+</script>
+</body>
+</html>
